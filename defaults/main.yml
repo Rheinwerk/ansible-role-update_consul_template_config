@@ -1,0 +1,12 @@
+# vim: ft=ansible:et:ts=2
+_consul_template:
+  user: "root"
+  group: "root"
+  config_dir: "/etc/consul-template.d"
+  templates:
+    haproxy:
+      src: "/etc/haproxy/haproxy.cfg.ctpl"
+      dest: "/etc/haproxy/haproxy.cfg"
+      perms: "0640"
+      cmd:  "service haproxy reload"
+

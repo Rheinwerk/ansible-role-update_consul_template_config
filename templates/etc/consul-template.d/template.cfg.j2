@@ -1,0 +1,19 @@
+template {
+  source = "{{ _template.src }}"
+  destination = "{{ _template.dest }}"
+
+{% if _template.cmd is defined %}
+  command = "{{ _template.cmd }}"
+{% endif %}
+{% if _template.perms is defined %}
+  perms = {{ _template.perms }}
+{% endif %}
+{% if _template.backup is defined %}
+  backup = {{ _template.backup|lower }}
+{% endif %}
+{% if _template.wait is defined %}
+  wait = {{ _template.wait|lower }}
+{% endif %}
+
+}
+

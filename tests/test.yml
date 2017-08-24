@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  become_user: root
+  pre_tasks:
+    - file: name="/etc/consul-template.d" state=directory owner="root" group="root" mode="0755"
+  roles:
+    - ansible-role-update_consul_template_config

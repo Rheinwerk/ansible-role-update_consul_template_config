@@ -1,0 +1,9 @@
+{% if _consul_template.consul is defined %}
+consul = "{{ _consul_template.consul.server }}:{{ _consul_template.consul.port }}"
+{% endif %}
+{% if _consul_template.log_level is defined %}
+log_level = "{{ _consul_template.log_level}}"
+{% endif %}
+{% if _consul_template.wait is defined %}
+wait = "{{_consul_template.wait}}"
+{% endif %}
