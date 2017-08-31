@@ -12,7 +12,7 @@ template {
   backup = {{ _template.backup|lower }}
 {% endif %}
 {% if _template.wait is defined %}
-  wait = {{ _template.wait|lower }}
+  wait = "{{ _template.wait|lower }}"
 {% endif %}
 
 }
