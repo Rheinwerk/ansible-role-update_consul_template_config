@@ -9,4 +9,3 @@ _consul_template:
       dest: "/etc/haproxy/haproxy.cfg"
       perms: "0640"
       cmd:  "service haproxy reload"
-
