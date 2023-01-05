@@ -1,0 +1,3 @@
+- src: https://github.com/Rheinwerk/ansible-role-consul.git
+  name: consul
+  scm: git
