@@ -1,16 +1,16 @@
 ---
-allow_duplicates: yes
 galaxy_info:
   author: Daniel Schneller
+  namespace: rheinwerk
+  role_name: update_consul_template_config
   description: Configures Consul Template
   company: Rheinwerk
   license: license (GPLv3)
-  min_ansible_version: 2.3
+  min_ansible_version: 2.9.0
   platforms:
   - name: Ubuntu
     versions:
     - trusty
   galaxy_tags:
     - consul
-    - consul_template
 dependencies: []
