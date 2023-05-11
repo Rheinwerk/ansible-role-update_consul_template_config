@@ -1,7 +1,7 @@
 # vim: set ft=ansible:
 
 - name: Create Consul Template Config Directory
-  file:
+  ansible.builtin.file:
     name: "{{ _consul_template.config_dir }}"
     state: directory
     owner: '{{ _consul_template.user | default("root") }}'
@@ -9,7 +9,7 @@
     mode: "0755"
 
 - name: Create Consul Template Configuration Files ... Main
-  template:
+  ansible.builtin.template:
     src: "etc/consul-template.d/{{ item }}.j2"
     dest: "{{ _consul_template.config_dir }}/{{ item }}"
     owner: "root"
@@ -19,7 +19,7 @@
     - "consul-template.cfg"
 
 - name: Create Consul Template Configuration Files ... Template Definitions
-  template:
+  ansible.builtin.template:
     src: "etc/consul-template.d/template.cfg.j2"
     dest: "{{ _consul_template.config_dir }}/{{ item.key }}.cfg"
     owner: "root"
